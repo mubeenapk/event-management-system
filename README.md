@@ -55,8 +55,9 @@ Add screenshots of:
 
 * Home Page
 * Login Page
-* Event Listing Page
 * Booking Page
+* Payment page
+* Admin Dashboard
 
 ## Installation
 
