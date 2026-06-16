@@ -1,0 +1,172 @@
+/* ===========================
+   AUTH PAGE (LOGIN / REGISTER)
+   Matches home.css theme
+=========================== */
+
+/* Base Layout */
+body.auth-body {
+  height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #1a1a1a, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  position: relative;
+}
+
+/* Floating accent glow */
+body.auth-body::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 64, 129, 0.35), transparent 70%);
+  top: -120px;
+  left: -120px;
+  animation: floatGlow 6s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes floatGlow {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, 60px); }
+}
+
+/* Container */
+.auth-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 18px;
+  padding: 40px 30px;
+  width: 380px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255, 64, 129, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 35px rgba(255, 64, 129, 0.25);
+}
+
+/* Brand */
+.brand {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+.iven { color: #fff; }
+.to { color: #ff4081; }
+
+/* Message (error/info) */
+.msg, .auth-container p[style*="color:red"] {
+  color: #ffcc00 !important;
+  font-size: 14px;
+  margin-bottom: 15px;
+  min-height: 20px;
+  font-weight: 500;
+}
+
+/* Tabs (Login / Register) */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  gap: 10px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tabs button:hover {
+  background: rgba(255, 64, 129, 0.2);
+}
+
+.tabs button.active {
+  background: linear-gradient(90deg, #ff4081, #e73370);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 64, 129, 0.4);
+}
+
+/* Input Fields */
+.auth-form input {
+  width: 90%;
+  padding: 12px 14px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.auth-form input::placeholder {
+  color: #aaa;
+}
+
+.auth-form input:focus {
+  outline: none;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid #ff4081;
+  box-shadow: 0 0 8px rgba(255, 64, 129, 0.4);
+}
+
+/* Buttons */
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff4081, #e73370);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-form button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(255, 64, 129, 0.4);
+}
+
+/* Forgot Password & Links */
+.auth-form a {
+  color: #ff4081;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.auth-form a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  .auth-container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+  .brand { font-size: 34px; }
+  .tabs button { font-size: 14px; }
+}
